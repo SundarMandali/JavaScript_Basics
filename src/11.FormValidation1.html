@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <!--Basic Form Validation for validating username and password-->
+        <title>Form Validation</title> 
+        <script>
+            function validate(){
+                var c1=document.getElementById("uname");
+                var c2=document.getElementById("pwd");
+                if(c1.value.trim()=="" || c2.value.trim()=="")
+                {
+                    alert("No blank values allowed")
+                    return false;
+                }
+                else
+                { 
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="return validate();" action="12.message.html"><br>
+           Username: <input id="uname" type="text" placeholder="Enter username"></input>
+           <br> Password:<input id="pwd" type="password" placeholder="Enter password"></input>
+          <br> <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

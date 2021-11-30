@@ -1,0 +1,54 @@
+<html>
+    <head>
+    <!-- In this we use some more methods that manipulate DOM
+        1).append():Inserts content at the end of the selected elements
+        2).prepend():Inserts content at the beginning of the selected elements
+        3).after():Inserts content after the selected elements
+        4).before():Inserts content before the selected elements
+
+        5).remove():Remove the selected elements(and it's child elements).
+        6).empty():Remove the child elements of the selected elements.
+    -->
+        <title>Jquery DOM part-3</title>
+        <link rel="stylesheet" href="style1.css">
+    </head>
+    <body>
+        <button id="btn1">Append</button>
+        <button id="btn2">Prepend</button>
+        <button id="btn3">After</button>
+        <button id="btn4">Before</button>
+        <br><br>
+        <button id="btn5">Remove</button>
+        <button id="btn6">Empty</button><br><br>
+        <div id="demo">
+            <p id="p1">THIS IS THE <b>1st PARA</b> OF THE ESSAY</p>
+            <p id="p2">HI I am <b>SECOND PARA</b>OF THE ESSAY</p>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                $("#demo").append("<p>THIS IS <b> APPENDED PARA</b>OF THE ESSAY </p>");
+            });
+            $("#btn2").click(function() {
+                $("#demo").prepend("<p>THIS IS <b>PREPENDED PARA</b>OF THE ESSAY </p>");
+            });
+            $("#btn3").click(function(){
+                $("#demo").after("<h1>AFTER THE DIVISION</h1>");
+            });
+            $("#btn4").click(function() {
+                $("#demo").before("<h1>BEFORE THE DIVISION</h1>");
+            });
+            $("#btn5").click(function() {
+                $("div").remove();//removes entire division
+            //  $("p").remove("#p1");//removes the 1st para
+            //  $("p").remove("#p2,#p2");//removes both the paras
+            //Also we can give class_name of the element as parameter in remove() method to remove particular class
+            });
+            $("#btn6").click(function() {
+                $("div").empty();//empties the child elements of <div> tag i.e,<p> tag
+            });
+        });
+    </script>
+</html>

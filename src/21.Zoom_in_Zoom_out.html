@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <!--In this we Zoom_in and Zoom_out the image while we mouseover on the image and mouseout the image-->
+        <title>Zoom_in and Zoom_out</title>
+        
+        <script>
+            var width=100;
+            var difference=2;
+            var id=0;
+            function zoom_in(){
+                clearInterval(id);
+                id=setInterval(increase,10);
+            }
+            function zoom_out(){
+                clearInterval(id);
+                id=setInterval(decrease,10);
+            }
+            
+            function increase(){
+                var image=document.getElementById("image");
+                if(width<200)
+                {
+
+                    width=width+difference;
+                    
+                    image.style.width=width;
+                }
+                else
+                {
+                    clearInterval(id);
+                }
+            }
+            
+            function decrease(){
+                var image=document.getElementById("image");
+                
+                if(width>100)
+                {
+                    width=width-difference;
+                    image.style.width=width;
+                }
+                else{
+                    clearInterval(id);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <img id="image" onmouseover="zoom_in()" onmouseout="zoom_out()" src="heart.jpg" width="100"/>
+    </body>
+</html>

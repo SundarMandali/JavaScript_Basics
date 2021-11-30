@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Jquery Events Part 2</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="demo">Selector 1</h1>
+        <h1>Selector 2</h1>
+        <h1>Selector 3</h1>
+        <button id="hh">Press</button>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            $("#hh").mouseenter(fn1);
+            $("#hh").mouseleave(fn2);
+            $("#hh").hover(fn1,fn2);
+            function fn1(){
+                $(".demo").fadeOut();
+            }
+            function fn2(){
+                $(".demo").fadeIn();
+            }
+        });
+    </script>
+</html>

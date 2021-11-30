@@ -1,0 +1,34 @@
+<html>
+    <head>
+    <!--In this we see timing functions where we have four basic functions
+    1). setTimeout() : allows you to execute statements Once after an interval.
+    2). clearTimeout(): this method clears a timer set with the setTimeout() method
+    3). setInterval(): allows you to execute statements REPEATEDLY after an interval
+    4). clearInterval(): method clears a timer set with the setInterval() method
+    
+    Let's see only first two in this tutorial
+    
+    -->
+    <title>Timing Functions</title>
+
+    <script>
+        var id=0
+        function printMsg(){
+            document.getElementById("op").innerHTML="TEXT CHANGED";
+        }
+        function start(){
+            id=window.setTimeout(printMsg,5000);
+        }
+        function stop(){
+            window.clearTimeout(id);
+        }
+    </script>
+    </head>
+    <body>
+        <button id="demo" onclick="start()">Start</button>
+        <br>
+        <h2 id="op">Some Text</h2>
+        <br>
+        <button id="demo2" onclick="stop()">Stop</button>
+    </body>
+</html>

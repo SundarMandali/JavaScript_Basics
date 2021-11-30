@@ -1,0 +1,42 @@
+<html>
+    <head>
+    <!--In this we see about Regular Expressions with character set and ranges i.e, which allow only
+        particular character set and range of characters or digits that mentioned in regular expressions
+     -->
+     <title>Regular Expressions (character set and ranges)</title>
+
+     <script>
+         function reg()
+         {
+             var uname=document.getElementById("uname");
+             var regex=/[sdp]imple/  //the value can be simple,dimple and pimple
+             //var regex= /[a-z]00/  the first character can be in range from a to z
+             //var regex= /[A-Z]00/
+             //var regex= /[0-9]00/   the first letter should be a digit in range from 0 to 9
+             // var regex=  /[^1ad]00/  ===>Says that first character shouldn't be 1,a,d
+             // var regex= /[^a-z]00/  ==>first shouldn't be a character in range from a to z
+             
+             if(regex.test(uname.value))
+             {
+                 alert("Valid");
+             }
+             else
+             {
+                //  alert("E00 is not present");
+                uname.style.border="solid 3px red";
+                var c1=document.getElementById("demo");
+                c1.style.visibility="visible";
+
+             }
+         }
+     </script>
+    </head>
+    <body>
+        <form action="">
+           Username:<input id="uname" type="text" placeholder="Enter Username">
+           <label id="demo" style="color:red;visibility: hidden;">Invalid Username</label>
+           <br>
+           <button onclick="reg()" type="button">Submit</button>
+        </form>
+    </body>
+</html>

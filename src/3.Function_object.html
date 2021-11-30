@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            Function Objects
+        </title>
+    </head>
+    <body>
+        <script>
+            /*For multiple objects we use an efficient object creation .So function objected is created for 
+            making it easier.*/
+            function student(name,rollno)
+            {
+                this.name=name;
+                this.rollno=rollno;
+                //we can add another function also
+                this.fun=function()
+                {
+                    document.write("Hello this is function object");
+                } 
+            }
+            var obj1=new student("sundar",21);
+            var obj2=new student("rahul",13);
+            obj1.fun();
+        </script>
+    </body>
+</html>

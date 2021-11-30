@@ -1,0 +1,27 @@
+<html>
+<head>
+<!-- In this we use document.getElementByClassName for manipulating the DOM-->
+</head>
+<body>
+<!-- The main purpose of we use class is that we can select only a set of elements belong to same tag or differe
+nt tag to which we want to mainpulate-->
+<p class="grp1">para 1</p>
+<p>para 2</p>
+<p class="grp1">para 3</p>
+<p>para 4</p>
+<p class="grp1">para 5</p>
+<p>para 6</p>
+<a class="grp1" href="#">ANCHOR TAG</a> <br>
+<button onclick="fun()">Press</button>
+
+<script>
+    function fun(){
+        var c1=document.getElementsByClassName("grp1");
+        for(var i=0;i<c1.length;i++)
+        {
+            c1[i].style.color="red";
+        }
+    }
+</script>
+</body>
+</htl>

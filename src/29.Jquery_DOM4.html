@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <!--In this we see few methods that manipulate DOM
+        1).addClass():  Add one or more classes to the selected elements
+        2).removeClass():  Removes one or more classes from the selected elements
+        3).toggleClass():  Toggles between adding/removing classes from the selected elements
+        4).css():  Sets or returns the style attribute
+-->
+        <title>Jquery DOM part 4</title>
+        <link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <button id="btn1">Add Class</button>
+        <button id="btn2">Remove Class</button>
+        <button id="btn3">Toggle Class</button>
+        <button id="btn4">CSS</button><br><br>
+        <div id="div1" class="mydivs">THIS IS THE <b>FIRST DIVISION</b> OF THE ESSAY</div>
+        <div id="div2">THIS IS <b>SECOND DIVISION</b> OF THE ESSAY</div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#div1").addClass("newdivclass newdivclass2");
+            });
+            $("#btn2").click(function(){
+               $("#div1").removeClass("newdivclass"); 
+            });
+            $("#btn3").click(function(){
+                $("#div1").toggleClass("newdivclass");
+            });
+            $("#btn4").click(function(){
+            //    alert($("#div1").css("font-size"));  //getting the css property value
+               $("#div1").css("font-size","20px");  //setting the css property with a value
+            });
+
+        });
+    </script>
+</html>

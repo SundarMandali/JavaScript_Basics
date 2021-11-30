@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <!--In this we create form that takes username and password as input.Later we keep two conditions for form validation
+         1).Password should contain minimum 5 letters
+         2).If username and pwd are null then we should show border as red and Display invalid username and password
+        -->
+        <title>Form validation Part2</title>
+
+        <script>
+            function validate(){
+                var uname=document.getElementById("uname");
+                var pwd=document.getElementById("pwd");
+                if(uname.value.trim()=="")
+                {
+                    //alert("Username is blank");
+                    uname.style.border="solid 3px red";
+                    var c1=document.getElementById("demo");
+                    c1.style.visibility="visible";
+                    return false;
+                }
+                else if(pwd.value.trim()=="")
+                {
+                    // alert("Password is null");
+                    pwd.style.border="solid 3px red";
+                    var c2=document.getElementById("demo2");
+                    c2.innerHTML="Invalid password";
+                    return false;
+                }
+                else if(pwd.value.trim().length<5)
+                {
+                    pwd.style.border="solid 3px red";
+                    var c3=document.getElementById("demo2");
+                    c3.innerHTML="Password is too short";
+                    return false;
+                }
+                else
+                return true;
+            }
+        </script>
+
+    </head>
+    <body>
+        <form onsubmit="return validate();" action="12.message.html">
+            <br>
+            Username:<input id="uname" type="text" placeholder="Enter username"></input>
+            <label id="demo" style="color:red;visibility: hidden;">Invalid username</label>
+            <br>
+            Password:<input id="pwd" type="password" placeholder="Enter password"></input>
+            <label id="demo2" style="color:red"></label>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

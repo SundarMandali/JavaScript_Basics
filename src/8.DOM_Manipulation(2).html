@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <!--In this we use document.getElementsByTagName for DOM Manipulation-->
+    </head>
+    <body>
+        <p>This is para1</p>
+        <p>This is para2</p>
+        <p>This is para3</p>
+        <p>This is para4</p>
+        <p>This is para5</p>
+        <button onclick="fun()">Press</button>
+        
+        <script>
+            function fun(){
+            var c1=document.getElementsByTagName("p");
+            c1[0].style.color="red";
+            c1[1].style.fontStyle="italic";
+            c1[2].style.fontSize="10";
+            c1[3].style.fontWeight="bold";
+            c1[4].style.fontSize="25";
+
+          /* If we want to manipulate all the elements of the array corresponding to tag then FOR loop is preferrable
+            for(var i=0;i<5;i++){
+            c1[i].style.fontStyle="italic";} */
+            } 
+        </script>
+    </body>
+</html>

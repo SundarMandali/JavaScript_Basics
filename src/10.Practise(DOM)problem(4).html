@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <!--In this we use an image and we display the new image if we hover on it and when we hoverout
+        we display old image -->
+    </head>
+    <body>
+        <p style="text-align:center;">
+           <img id="demo" onmouseover="newImage()" src="rc2.jpg" onmouseout="oldImage()" width=500 height=300/>
+        </p>
+        
+        <script>
+            function newImage(){
+                document.getElementById("demo").src="rc.jpg";
+            }
+            function oldImage(){
+                document.getElementById("demo").src="rc2.jpg";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <!--In this we see about setInterval() method and clearInterval() method
+        
+        setInterval(): this method allows you to execute statements repeatedly after an interval
+        clearInterval(): this method clears a timer set with the setInterval()
+        -->
+        <title>Basic Timing Functions Part-2</title>
+
+        <script>
+            var sec=0;
+            var id=0;
+            function printMessage()
+            {
+                document.getElementById("op").innerHTML=sec+" seconds";
+                sec++;
+            }
+            function start(){
+                id=window.setInterval(printMessage,1000);
+            }
+            function stop(){
+                window.clearInterval(id);
+            }
+        </script>
+
+    </head>
+    <body>
+        <button onclick="start()" type="button">Start</button>
+        <br>
+        <h2 id="op">Some message</h2>
+        <button onclick="stop()" type="button">Stop</button>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <!--In this we see DOM manipulation in jquery
+        we use text(),html(),attr(),css() and mainpulate the DOM
+        -->
+        <title>Jquery DOM MANIPULATION</title>
+    </head>
+    <body>
+        <button id="btn1">Press</button>
+        <p id="demo" class="first">This is <b>first paragraph </b>of the essay</p>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                /*To get the text in paragraph we use text() 
+                For setting the text we use text(".....") and the text we want to set should be in brackets
+
+                You can see that in paragraph text there are html tags like <b>
+                    So we can see cannot see those tags as part of text while we use get function i.e txt()
+                
+ ===>            alert($("#demo").txt());  displays the text in pop up box.
+ ===>           $("#demo").text("Hello World"); // settting the text as "Hello world"
+                */
+               /* To get the html tags to be displayed we use html() fumction
+               for getting  ===> html()
+               And we can set the text using html tags in same function ==> html(".....")
+               */
+// ==>           //alert($("#demo").html()); //displays the text with html tags as in the paragraph
+// ==>  //  $("#demo").html("THIS is <i>changed pragraph</i> of the essay");//setting the paragraph by using html tags
+           
+    /*
+  ===>  we can also use attr() method for getting the value of taht attribute
+
+    */
+    //alert($("#demo").attr("class")); //it displays the value of class attribute i.e, "first"
+    
+
+/*
+we use css() tag to get the css of particular element
+*/
+//   ===>    alert($("#demo").css("color")); //displays the color of text in paragraph
+
+    });
+        });
+    </script>
+</html>

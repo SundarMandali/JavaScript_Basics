@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <!--In this we use select box[drop down list] and display the selected option-->
+    </head>
+    <body>
+        <select id="demo">
+          <option value="Apple">Apple</option>
+          <option value="Banana">Banana</option>
+          <option value="Grapes">Grapes</option>  
+        </select><br><br>
+
+        <button onclick="fun()">Press</button>
+        <script>
+            function fun(){
+                var c1=document.getElementById("demo");
+                alert(c1.options[c1.selectedIndex].value);
+            /*HERE the 'options' are attributes in 'select' element and in DOM these are arranged in an array
+            and 'selectedIndex' is the property of 'select' element which returns index of selected option    
+            */
+            }
+        </script>
+    </body>
+</html>

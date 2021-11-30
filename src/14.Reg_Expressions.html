@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <!--In this we see about Regular Expressions.The Regular Expressions are used for performing powerful
+     1)Pattern Matching
+     2)Serch and replace functions in text 
+     -->
+     <title>Pattern Matching Basics</title>
+
+     <script>
+         function reg()
+         {
+             var uname=document.getElementById("uname");
+             var regex=/E00/;   //we use "/E00/i" for case insensitive
+             //An object orient way of regular expression representation is as below
+             // regex=new RegExp("E00","i");
+
+
+             //The regex variable is an 'object' type in javascript
+             //Now we will check whether the pattern 'E00' is present in user name through regular expressions
+             if(regex.test(uname.value))
+             {
+                 alert("E00 is present");
+             }
+             else
+             {
+                //  alert("E00 is not present");
+                uname.style.border="solid 3px red";
+                var c1=document.getElementById("demo");
+                c1.style.visibility="visible";
+
+             }
+         }
+     </script>
+    </head>
+    <body>
+        <form action="">
+           Username:<input id="uname" type="text" placeholder="Enter Username">
+           <label id="demo" style="color:red;visibility: hidden;">Invalid Username</label>
+           <br>
+           <button onclick="reg()" type="button">Submit</button>
+        </form>
+    </body>
+</html>

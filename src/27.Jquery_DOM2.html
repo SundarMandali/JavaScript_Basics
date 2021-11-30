@@ -1,0 +1,37 @@
+<html>
+    
+    <head>
+        <!--In this we know more about attr() and css() functions -->
+        <title>Jquery attr() and css() </title>
+    </head>
+    <body>
+        <button id="btn1">Get Value</button>
+        <button id="btn2">Set Value</button>
+        <p id="demo" class="first">This is <b>first paragraph</b>of this essay</p>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //Getting and setting of attribute of an element using  attr()
+      /*  $(document).ready(function(){
+            $("#btn1").click(function(){
+                alert($("#demo").attr("class")); //getting the attribute value i.e value of class{first}
+            });
+            $("#btn2").click(function(){
+                $("#demo").attr("class","second"); //setting the value of class to "second"
+            });
+        });
+*/
+    //getting the css and setting the css of an element using css()
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            alert($("#demo").css("color")); //getting the color of paragraph using css() function 
+        });
+
+    $("#btn2").click(function(){
+        $("#demo").css("color","blue"); //setting the color of paragraph using css() function to blue
+    });
+
+
+    });
+    </script>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <!--In this we see about Email Validation and the email has particular format as shown below
+        
+                1            2           3            4(optional)
+            (yourname) @ (domain) . (extension) (.extension)
+        
+            Eg)   sundar@vjit.ac.in
+                  sundar@gmail.com
+
+                  1) Any letters,numbers,dot and/or hyphens
+                  2) Any letter,number and/or hypen(-)
+                  3) Any letter(a-z)
+                  4) a dot(.) then any letter
+        -->
+        <title>Email Validation</title>
+
+        <script>
+            function regex(){
+                 
+                var email=document.getElementById("email");
+                /*
+                Things to remember:
+              1).  Eg)  var regx= /a.b/ ==> here dot is wild card character which means that anything between a and b letter is acceptable
+                ==> so if we want to include dot as a letter in pattern then we can write as follows
+                  var regx= /a\.b/ ==>  '\.' is used to represent this .Now the pattern is 'a.b'
+             2). If we want any character set to be exceptional i.e optional then we should place '?' after that character set
+                 Eg) in above email validation format 4th part is optional so we can use '?' after that pattern
+            
+
+                var regx= /^([a-z A-Z 0-9 \. -])@([a-z A-Z 0-9 -]).([a-z])(.[a-z])$/
+
+                the above reg expression accepts only {1 character before @ ; 1 character before dot(.) ; also same for other two parts
+                    so the each part can be restricted as below
+            1st part is username it can be any length so we use "+" after the 1st character set which means 1 character or more than one
+            2nd part is domain which is generally of any length and so we put '+' after 2nd character set
+            3rd part is extension which is also in range of 2 to 8 and (this is not standard range) we put {2,8} after 3rd character set
+        and same for 4th part
+*/
+             var regx= /^([a-z A-Z 0-9 \. -]+)@([a-z A-Z -]+).([a-z]{2,8})(.[a-z]{2,8})?$/
+
+             if(regx.test(email.value))
+             {
+                 alert("Valid email");
+             }
+             else
+             alert("InValid email");
+
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Email:<input id="email" type="text" placeholder="Enter the email"/>
+            <br>
+            <button onclick="regex()" type="button">Submit</button>
+        </form>
+    </body>
+</html>

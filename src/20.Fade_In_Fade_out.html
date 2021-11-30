@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <!--In this we see Fade_In and Fade_Out of an image by increasing and decreasing opacity valueof image.
+            We use setInterval() and clearInterval() methods for these performing these actions-->
+        <title>Fade_In and Fade_Out</title>
+
+        <script>
+            var id=0;
+            var id2=0;
+            var opacity=0;
+            function fadeOut(){
+                id=setInterval(hide,200);
+            }
+            
+            function fadeIn(){
+                id2=setInterval(show,200);
+            }
+
+            function hide(){
+                var image=document.getElementById("image");
+               opacity = Number(window.getComputedStyle(image).getPropertyValue("opacity"));
+                if(opacity>0)
+                {
+                    opacity=opacity-0.1;
+                    image.style.opacity=opacity;
+                }
+                else
+                {
+                    clearInterval(id);
+                }
+            }
+
+            function show(){
+                var image=document.getElementById("image");
+                opacity=Number(window.getComputedStyle(image).getPropertyValue("opacity"));
+                
+                if(opacity<1)
+                {
+                    opacity=opacity+0.1;
+                    image.style.opacity=opacity;
+                }
+                else
+                {
+                    clearInterval(id2);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <button onclick="fadeOut()" type="button">Fade Out</button>
+        <br><br>
+        <img id="image" src="rc.jpg"/>
+        <br><br>
+        <button onclick="fadeIn()" type="button">Fade In</button>
+    </body>
+</html>

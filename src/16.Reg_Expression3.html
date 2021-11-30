@@ -1,0 +1,55 @@
+<html>
+    <head>
+    <!--In this we validate mobile number in a form using following constraints
+        1)The first letter should be a digit and it should be either 7 or 8 or 9{According to India mobile numbers}
+        2)The first letter should follow by 9 digits as the mobile number should be of length 10
+        3)After the 10 digits no digit are letter shouldn't be acceptable
+     -->
+     <title>Regular Expressions (Mobile number Validation)</title>
+
+     <script>
+         function reg()
+         {
+             var phno=document.getElementById("phno");
+             
+             var regx=/^[7-9]\d{9}$/  // same as ==> var regx = /^[7-9][0-9]{9}$/
+             /*
+            ^ ==> This symbol is used for two purposes :
+                1). [^0-9 ]==>Inside bracket means except from 0 to 9 all are accepted.
+                2). ^[0-9] ==> Outside bracket means the 1st letter should be from 0 to 9.
+                3). $  ==> It means end of text 
+
+             Explanation:
+             Special symbols used in regular expressions are:
+             \d ===> match any digit from 0 to 9 i.e same as [0-9]
+             \w ===>  match any letter from (a to z) ,(A to Z) or (0 to 9) or '_' i.e (a-z,A-z ,0-9 and _ ) 
+             \s ===> match if any spaces and tab spaces present
+             \t ===> match only if tab spaces
+             
+             Here \d i.e,[0-9] should repeat 9 times so we use it as {9}==> nine times repeatation
+
+             */
+             if(regx.test(phno.value))
+             {
+                 alert("Valid");
+             }
+             else
+             {
+                //  alert("E00 is not present");
+                phno.style.border="solid 3px red";
+                var c1=document.getElementById("demo");
+                c1.style.visibility="visible";
+
+             }
+         }
+     </script>
+    </head>
+    <body>
+        <form action="">
+           MobileNumber:<input id="phno" type="text" placeholder="Enter MobileNumber">
+           <label id="demo" style="color:red;visibility: hidden;">Invalid Mobile Number</label>
+           <br>
+           <button onclick="reg()" type="button">Submit</button>
+        </form>
+    </body>
+</html>

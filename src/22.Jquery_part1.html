@@ -1,0 +1,31 @@
+<htmL>
+    <head>
+        <!--In this we use jquery code which is an javascript library we can perform many operations easily
+        like
+        1).HTML DOM Manipulation
+        2).CSS Manipulation
+        3).HTML event methods
+        4).Effects and animations
+        5).AJAX
+        6).Utilities
+
+        Now we embed a jquery source code and we perform an operation like example: fade_in and fade_out of text
+        very easily where as in plain vanilla Javascript we need to write huge code for it.
+    -->
+        <title>Basic Jquery Implementation</title>
+    </head>
+    <body>
+        <h2 id="demo">Something is fishy</h2>
+        <button onclick="fun()" >Click</button>
+        
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function fun(){
+            $("#demo").fadeToggle(2000);
+        }
+    </script>
+
+</htmL>

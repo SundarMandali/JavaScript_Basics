@@ -1,0 +1,23 @@
+<html>
+    <head>
+    <!--In this we take input from radio buttons and if they are selected then display the value of it-->
+    </head>
+    <body>
+        <input id="demo1" name="grp1" type="radio" value="Male">Male</input><br>
+        <input id="demo2" name="grp1" type="radio" value="Female">Female</input><br>
+        <button onclick="fun()">Press</button>
+        
+        <script>
+            function fun(){
+                var rd1=document.getElementById("demo1");
+                var rd2=document.getElementById("demo2");
+                if(rd1.checked==true)
+                alert(rd1.value);
+                else if(rd2.checked==true)
+                alert(rd2.value);
+                else
+                alert("No radio button is selected");
+            }
+        </script>
+    </body>
+</html>
